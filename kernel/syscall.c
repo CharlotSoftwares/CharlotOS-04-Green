@@ -1,19 +1,26 @@
-// syscall.c — syscalls, the fake gods of userland
-// right now just a useless table
+// syscall.c — working syscall handler
 
 #include <kernel.h>
 #include <drivers/screen.h>
+#include <string.h>
 
-void syscall_handler(int syscall_id) {
-    print("lol syscall called, id = ");
-    print_num(syscall_id);  // custom print_num() maybe
-    print("\n");
+void sys_hello() {
+    print("sys_hello(): ayy, it works\n");
+}
 
-    switch(syscall_id) {
+void sys_print(const char* msg) {
+    print(msg);
+}
+
+void syscall_handler(int syscall_id, void* arg) {
+    switch (syscall_id) {
         case 0:
-            print("sys_hello: what's up userland\n");
+            sys_hello();
+            break;
+        case 1:
+            sys_print((const char*)arg);
             break;
         default:
-            print("idk what syscall that was 💀\n");
+            print("unknown syscall, get good\n");
     }
 }
