@@ -1,19 +1,25 @@
-// vfs.c — Virtual File System layer
-// this whole thing is a fkn placeholder rn
+// vfs.c — RAM-based toy FS for CharlotOS
 
-#include <kernel.h>
+#include <string.h>
 #include <drivers/screen.h>
 
-void vfs_init() {
-    print("[vfs] init: not a damn thing implemented yet lol\n");
-}
+typedef struct {
+    const char* name;
+    const char* data;
+} File;
 
-int vfs_open(const char* path) {
-    print("[vfs] open: bruh no files exist\n");
-    return -1;
-}
+File files[] = {
+    { "readme.txt", "This is CharlotOS 04 'Green'\n" },
+    { "hello.txt",  "yo user :)\n" },
+};
 
-int vfs_read(int fd, char* buf, int len) {
-    print("[vfs] read: not even reading air rn\n");
-    return 0;
+#define FILE_COUNT (sizeof(files)/sizeof(File)) 
+// shitty
+const char* vfs_read_file(const char* name) {
+    for (int i = 0; i < FILE_COUNT; i++) {
+        if (strcmp(files[i].name, name) == 0) {
+            return files[i].data;
+        }
+    }
+    return NULL;
 }
