@@ -1,0 +1,43 @@
+CharlotOS-04-Green/
+├── kernel/                   # the real deal — kernel source code
+│   ├── main.c                # entry point
+│   ├── kinit.c               # kernel init routines
+│   ├── syscall.c             # system call interface
+│   ├── memory.c              # memory manager
+│   ├── fs/                   # basic file system layer
+│   │   └── vfs.c
+│   └── drivers/              # low-level drivers
+│       ├── screen.c
+│       ├── keyboard.c
+│       ├── disk.c
+│       └── netcard.c         # NIC interface
+├── shell/                    # CLI shell source
+│   ├── shell.c
+│   ├── commands.c
+│   └── parser.c
+├── apps/                     # text-based userland apps
+│   ├── editor.c
+│   ├── netsearch.c
+│   ├── calc.c
+│   └── fileman.c
+├── lib/                      # C standard replacements / helpers
+│   ├── string.c
+│   ├── stdio.c
+│   └── memory.c
+├── config/                   # user config / settings
+│   └── default.cfg
+├── bootloader/               # bootloader (GRUB or custom)
+│   ├── grub.cfg
+│   └── boot.asm
+├── include/                  # headers
+│   ├── kernel.h
+│   ├── shell.h
+│   ├── drivers.h
+│   └── std.h
+├── fsroot/                   # virtual root FS to be loaded
+│   ├── bin/
+│   ├── etc/
+│   └── home/
+├── Makefile                  # build system
+├── CharlotOS.iso             # final ISO build
+└── README.md
