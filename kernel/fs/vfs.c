@@ -23,3 +23,4 @@ const char* vfs_read_file(const char* name) {
     }
     return NULL;
 }
+// this is like a dumb fake shit-from-a-butt fs but enough for reading tiny "files" in memory
