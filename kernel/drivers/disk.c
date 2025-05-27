@@ -1,5 +1,6 @@
 // disk.c — ATA PIO read (28-bit LBA)
 
+#include "ports.h"
 #include <stdint.h>
 #include <drivers/screen.h>
 #include <drivers/disk.h>
