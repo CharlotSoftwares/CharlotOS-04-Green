@@ -1,3 +1,7 @@
+// screen.h — ya basic screen ops
+// bro don't touch this unless ur fixing VGA shit
+// print() dumps to screen via vid mem, ez peasy
+
 #ifndef SCREEN_H
 #define SCREEN_H
 
