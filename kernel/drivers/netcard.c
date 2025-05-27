@@ -1,5 +1,6 @@
 // netcard.c — pretend NIC that buffers "sent" packets
 
+#include "ports.h"
 #include <drivers/screen.h>
 #include <string.h>
 
