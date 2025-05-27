@@ -1,5 +1,6 @@
 // keyboard.c — PS/2 scan code based input
 
+#include "ports.h"
 #include <stdint.h>
 #include <drivers/keyboard.h>
 
