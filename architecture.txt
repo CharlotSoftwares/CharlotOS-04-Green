@@ -33,6 +33,7 @@ CharlotOS-04-Green/
 │   ├── kernel.h
 │   ├── shell.h
 │   ├── drivers.h
+|   ├── ports.h
 │   └── std.h
 ├── fsroot/                   # virtual root FS to be loaded
 │   ├── bin/
